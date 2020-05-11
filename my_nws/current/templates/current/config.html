@@ -1,0 +1,18 @@
+<h1>Current Conditions - Configuration</h1>
+
+<form action="{% url 'save_config' %}" method="get">
+    <label>Station Code:</label>
+    <input type="text" id="station_code" name="station_code" value="{{curr_station_code}}"><br>
+    <label>Units:</label><br>
+    {% if curr_units == "F" %}
+        <input type="radio" id="F" name="units" value="F" checked>F<br>
+    {% else %}
+        <input type="radio" id="F" name="units" value="F">F<br>
+    {% endif %}
+    {% if curr_units == "C" %}
+        <input type="radio" id="C" name="units" value="C" checked>C<br>
+    {% else %}        
+        <input type="radio" id="C" name="units" value="C">C<br>
+    {% endif %}        
+    <input type="submit" value="Submit">
+</form>
